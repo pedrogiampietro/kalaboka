@@ -1,5 +1,5 @@
 {
-    "name": "pedrogiampietro/new-project",
+    "name": "pedrogiampietro/kalaboka",
     "authors": [
         {
             "name": "Pedro Giampietro",
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\php-classes\\src"
+            "kalaboka\\": "vendor\\php-classes\\src"
         }
     }
 }
