@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Tempo de geração: 09-Dez-2019 às 16:23
--- Versão do servidor: 10.4.8-MariaDB
--- versão do PHP: 7.1.33
+-- Host: localhost
+-- Generation Time: 10-Dez-2019 às 15:40
+-- Versão do servidor: 5.7.28-0ubuntu0.16.04.2
+-- PHP Version: 7.0.33-0ubuntu0.16.04.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,12 +17,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `kalaboka`
+-- Database: `kalaboka`
 --
 
 DELIMITER $$
 --
--- Procedimentos
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_userspasswordsrecoveries_create` (`piduser` INT, `pdesip` VARCHAR(45))  BEGIN
   
@@ -108,7 +106,7 @@ CREATE TABLE `tb_addresses` (
   `desstate` varchar(32) NOT NULL,
   `descountry` varchar(32) NOT NULL,
   `nrzipcode` int(11) NOT NULL,
-  `dtregister` timestamp NOT NULL DEFAULT current_timestamp()
+  `dtregister` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -120,7 +118,7 @@ CREATE TABLE `tb_addresses` (
 CREATE TABLE `tb_categories` (
   `idcategory` int(11) NOT NULL,
   `descategory` varchar(32) NOT NULL,
-  `dtregister` timestamp NOT NULL DEFAULT current_timestamp()
+  `dtregister` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -134,7 +132,7 @@ CREATE TABLE `tb_persons` (
   `desperson` varchar(64) NOT NULL,
   `desemail` varchar(128) DEFAULT NULL,
   `nrphone` bigint(20) DEFAULT NULL,
-  `dtregister` timestamp NOT NULL DEFAULT current_timestamp()
+  `dtregister` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -142,8 +140,8 @@ CREATE TABLE `tb_persons` (
 --
 
 INSERT INTO `tb_persons` (`idperson`, `desperson`, `desemail`, `nrphone`, `dtregister`) VALUES
-(1, 'JoÃ£o Rangel', 'admin@hcode.com.br', 2147483647, '2017-03-01 06:00:00'),
-(7, 'Suporte', 'suporte@hcode.com.br', 1112345678, '2017-03-15 19:10:27');
+(1, 'Pedro', 'admin@admin.com', 2147483647, '2017-03-01 06:00:00'),
+(7, 'Suporte', 'suporte@admin.com', 1112345678, '2017-03-15 19:10:27');
 
 -- --------------------------------------------------------
 
@@ -156,8 +154,8 @@ CREATE TABLE `tb_users` (
   `idperson` int(11) NOT NULL,
   `deslogin` varchar(64) NOT NULL,
   `despassword` varchar(256) NOT NULL,
-  `inadmin` tinyint(4) NOT NULL DEFAULT 0,
-  `dtregister` timestamp NOT NULL DEFAULT current_timestamp()
+  `inadmin` tinyint(4) NOT NULL DEFAULT '0',
+  `dtregister` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -182,7 +180,7 @@ CREATE TABLE `tb_userslogs` (
   `desuseragent` varchar(128) NOT NULL,
   `dessessionid` varchar(64) NOT NULL,
   `desurl` varchar(128) NOT NULL,
-  `dtregister` timestamp NOT NULL DEFAULT current_timestamp()
+  `dtregister` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -196,7 +194,7 @@ CREATE TABLE `tb_userspasswordsrecoveries` (
   `iduser` int(11) NOT NULL,
   `desip` varchar(45) NOT NULL,
   `dtrecovery` datetime DEFAULT NULL,
-  `dtregister` timestamp NOT NULL DEFAULT current_timestamp()
+  `dtregister` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -209,91 +207,85 @@ INSERT INTO `tb_userspasswordsrecoveries` (`idrecovery`, `iduser`, `desip`, `dtr
 (3, 7, '127.0.0.1', '2017-03-15 13:37:35', '2017-03-15 19:37:12');
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `tb_addresses`
+-- Indexes for table `tb_addresses`
 --
 ALTER TABLE `tb_addresses`
   ADD PRIMARY KEY (`idaddress`),
   ADD KEY `fk_addresses_persons_idx` (`idperson`);
 
 --
--- Índices para tabela `tb_categories`
+-- Indexes for table `tb_categories`
 --
 ALTER TABLE `tb_categories`
   ADD PRIMARY KEY (`idcategory`);
 
 --
--- Índices para tabela `tb_persons`
+-- Indexes for table `tb_persons`
 --
 ALTER TABLE `tb_persons`
   ADD PRIMARY KEY (`idperson`);
 
 --
--- Índices para tabela `tb_users`
+-- Indexes for table `tb_users`
 --
 ALTER TABLE `tb_users`
   ADD PRIMARY KEY (`iduser`),
   ADD KEY `FK_users_persons_idx` (`idperson`);
 
 --
--- Índices para tabela `tb_userslogs`
+-- Indexes for table `tb_userslogs`
 --
 ALTER TABLE `tb_userslogs`
   ADD PRIMARY KEY (`idlog`),
   ADD KEY `fk_userslogs_users_idx` (`iduser`);
 
 --
--- Índices para tabela `tb_userspasswordsrecoveries`
+-- Indexes for table `tb_userspasswordsrecoveries`
 --
 ALTER TABLE `tb_userspasswordsrecoveries`
   ADD PRIMARY KEY (`idrecovery`),
   ADD KEY `fk_userspasswordsrecoveries_users_idx` (`iduser`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `tb_addresses`
+-- AUTO_INCREMENT for table `tb_addresses`
 --
 ALTER TABLE `tb_addresses`
   MODIFY `idaddress` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT de tabela `tb_categories`
+-- AUTO_INCREMENT for table `tb_categories`
 --
 ALTER TABLE `tb_categories`
   MODIFY `idcategory` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT de tabela `tb_persons`
+-- AUTO_INCREMENT for table `tb_persons`
 --
 ALTER TABLE `tb_persons`
   MODIFY `idperson` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
--- AUTO_INCREMENT de tabela `tb_users`
+-- AUTO_INCREMENT for table `tb_users`
 --
 ALTER TABLE `tb_users`
   MODIFY `iduser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
--- AUTO_INCREMENT de tabela `tb_userslogs`
+-- AUTO_INCREMENT for table `tb_userslogs`
 --
 ALTER TABLE `tb_userslogs`
   MODIFY `idlog` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT de tabela `tb_userspasswordsrecoveries`
+-- AUTO_INCREMENT for table `tb_userspasswordsrecoveries`
 --
 ALTER TABLE `tb_userspasswordsrecoveries`
   MODIFY `idrecovery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --
@@ -301,7 +293,6 @@ ALTER TABLE `tb_userspasswordsrecoveries`
 --
 ALTER TABLE `tb_addresses`
   ADD CONSTRAINT `fk_addresses_persons` FOREIGN KEY (`idperson`) REFERENCES `tb_persons` (`idperson`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
