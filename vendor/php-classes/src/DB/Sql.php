@@ -3,7 +3,7 @@ namespace kalaboka\DB;
 class Sql {
 	const HOSTNAME = "127.0.0.1";
 	const USERNAME = "root";
-	const PASSWORD = "";
+	const PASSWORD = "pedrorlx@94";
 	const DBNAME = "kalaboka";
 	private $conn;
 	public function __construct()
