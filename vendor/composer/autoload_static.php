@@ -16,7 +16,7 @@ class ComposerStaticInit367f7401889bd7e16c020c084a133c77
     public static $prefixDirsPsr4 = array (
         'kalaboka\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-classes/src',
+            0 => __DIR__ . '/..' . '/kalaboka/php-classes/src',
         ),
     );
 

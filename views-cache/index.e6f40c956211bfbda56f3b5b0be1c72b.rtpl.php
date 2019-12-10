@@ -1,4 +1,4 @@
-		<main class="content">
+<?php if(!class_exists('Rain\Tpl')){exit;}?>		<main class="content">
 				<div class="container-fluid p-0">
 
 					<div class="row">

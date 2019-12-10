@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "kalaboka\\": "vendor\\php-classes\\src"
+            "kalaboka\\": "vendor\\kalaboka\\php-classes\\src"
         }
     }
 }

@@ -1,4 +1,4 @@
-<footer class="footer">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
 						<div class="col-6 text-left">

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +18,9 @@
 			opacity: 0;
 		}
 	</style>
-	<script src="js\settings.js"></script>
+	<script src="../res/js/settings.js"></script>
+	<script src="../res/js/app.js"></script>
+
 	<!-- END SETTINGS -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-120946860-6"></script>
@@ -218,23 +220,23 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown">
-                <img src="../res/img/flags\us.png" alt="English">
+                <img src="../res/img/flags/us.png" alt="English">
               </a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags\us.png" alt="English" width="20" class="align-middle mr-1">
+                  <img src="../res/img/flags/us.png" alt="English" width="20" class="align-middle mr-1">
                   <span class="align-middle">English</span>
                 </a>
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags\es.png" alt="Spanish" width="20" class="align-middle mr-1">
+                  <img src="../res/img/flags/es.png" alt="Spanish" width="20" class="align-middle mr-1">
                   <span class="align-middle">Spanish</span>
                 </a>
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags\de.png" alt="German" width="20" class="align-middle mr-1">
+                  <img src="../res/img/flags/de.png" alt="German" width="20" class="align-middle mr-1">
                   <span class="align-middle">German</span>
                 </a>
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags\nl.png" alt="Dutch" width="20" class="align-middle mr-1">
+                  <img src="../res/img/flags/nl.png" alt="Dutch" width="20" class="align-middle mr-1">
                   <span class="align-middle">Dutch</span>
                 </a>
 							</div>
@@ -253,9 +255,13 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="pages-settings.html">Settings & Privacy</a>
 								<a class="dropdown-item" href="#">Help</a>
-								<a class="dropdown-item" href="#">Sign out</a>
+								<a class="dropdown-item" href="/admin/logout">Sign out</a>
 							</div>
 						</li>
 					</ul>
 				</div>
 			</nav>
+
+
+
+		
