@@ -12,14 +12,14 @@
 
 	<link rel="preconnect" href="//fonts.gstatic.com/" crossorigin="">
 
-	<link href="../res/css/classic.css" rel="stylesheet">
+	<link href="../../../res/css/classic.css" rel="stylesheet">
 	<style>
 		body {
 			opacity: 0;
 		}
 	</style>
-	<script src="../res/js/settings.js"></script>
-	<script src="../res/js/app.js"></script>
+	<script src="../../../res/js/settings.js"></script>
+	<script src="../../../res/js/app.js"></script>
 
 	<!-- END SETTINGS -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -50,18 +50,15 @@
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar">
-							<li class="sidebar-item active"><a class="sidebar-link" href="dashboard-default.html">Default</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="dashboard-analytics-1.html">Analytics</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="dashboard-e-commerce.html">E-commerce</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="dashboard-social.html">Social</a></li>
-							<li class="sidebar-item"><a class="sidebar-link" href="dashboard-crypto.html">Crypto <span class="sidebar-badge badge badge-primary">New</span></a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="/admin/">Default</a></li>
+							<li class="sidebar-item"><a class="sidebar-link" href="/admin/users">Usuarios <span class="sidebar-badge badge badge-primary">New</span></a></li>
 						</ul>
 					</li>
 				</ul>
 
 				<div class="sidebar-bottom d-none d-lg-block">
 					<div class="media">
-						<img class="rounded-circle mr-3" src="../res/img/avatars/avatar.jpg" alt="Chris Wood" width="40" height="40">
+						<img class="rounded-circle mr-3" src="../../res/img/avatars/avatar.jpg" alt="Chris Wood" width="40" height="40">
 						<div class="media-body">
 							<h5 class="mb-1">Chris Wood</h5>
 							<div>
@@ -103,7 +100,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row no-gutters align-items-center">
 											<div class="col-2">
-												<img src="../res/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Ashley Briggs">
+												<img src="../../res/img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Ashley Briggs">
 											</div>
 											<div class="col-10 pl-2">
 												<div class="text-dark">Ashley Briggs</div>
@@ -115,7 +112,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row no-gutters align-items-center">
 											<div class="col-2">
-												<img src="../res/img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="Carl Jenkins">
+												<img src="../../res/img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="Carl Jenkins">
 											</div>
 											<div class="col-10 pl-2">
 												<div class="text-dark">Carl Jenkins</div>
@@ -127,7 +124,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row no-gutters align-items-center">
 											<div class="col-2">
-												<img src="../res/img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Stacie Hall">
+												<img src="../../res/img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Stacie Hall">
 											</div>
 											<div class="col-10 pl-2">
 												<div class="text-dark">Stacie Hall</div>
@@ -139,7 +136,7 @@
 									<a href="#" class="list-group-item">
 										<div class="row no-gutters align-items-center">
 											<div class="col-2">
-												<img src="../res/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Bertha Martin">
+												<img src="../../res/img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Bertha Martin">
 											</div>
 											<div class="col-10 pl-2">
 												<div class="text-dark">Bertha Martin</div>
@@ -220,23 +217,23 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-flag dropdown-toggle" href="#" id="languageDropdown" data-toggle="dropdown">
-                <img src="../res/img/flags/us.png" alt="English">
+                <img src="../../res/img/flags/us.png" alt="English">
               </a>
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags/us.png" alt="English" width="20" class="align-middle mr-1">
+                  <img src="../../res/img/flags/us.png" alt="English" width="20" class="align-middle mr-1">
                   <span class="align-middle">English</span>
                 </a>
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags/es.png" alt="Spanish" width="20" class="align-middle mr-1">
+                  <img src="../../res/img/flags/es.png" alt="Spanish" width="20" class="align-middle mr-1">
                   <span class="align-middle">Spanish</span>
                 </a>
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags/de.png" alt="German" width="20" class="align-middle mr-1">
+                  <img src="../../res/img/flags/de.png" alt="German" width="20" class="align-middle mr-1">
                   <span class="align-middle">German</span>
                 </a>
 								<a class="dropdown-item" href="#">
-                  <img src="../res/img/flags/nl.png" alt="Dutch" width="20" class="align-middle mr-1">
+                  <img src="../../res/img/flags/nl.png" alt="Dutch" width="20" class="align-middle mr-1">
                   <span class="align-middle">Dutch</span>
                 </a>
 							</div>
@@ -247,7 +244,7 @@
               </a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                <img src="../res/img/avatars/avatar.jpg" class="avatar img-fluid rounded-circle mr-1" alt="Chris Wood"> <span class="text-dark">Chris Wood</span>
+                <img src="../../res/img/avatars/avatar.jpg" class="avatar img-fluid rounded-circle mr-1" alt="Chris Wood"> <span class="text-dark">Chris Wood</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-right">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle mr-1" data-feather="user"></i> Profile</a>
