@@ -12,14 +12,14 @@
 
 	<link rel="preconnect" href="//fonts.gstatic.com/" crossorigin="">
 
-	<link href="../../../res/css/classic.css" rel="stylesheet">
+	<link href="../../res/css/classic.css" rel="stylesheet">
 	<style>
 		body {
 			opacity: 0;
 		}
 	</style>
-	<script src="../../../res/js/settings.js"></script>
-	<script src="../../../res/js/app.js"></script>
+	<script src="../../res/js/settings.js"></script>
+	<script src="../../res/js/app.js"></script>
 
 	<!-- END SETTINGS -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -36,7 +36,7 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content ">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="/admin">
           <i class="align-middle" data-feather="box"></i>
           <span class="align-middle">AppStack</span>
         </a>
@@ -50,7 +50,7 @@
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
             </a>
 						<ul id="dashboards" class="sidebar-dropdown list-unstyled collapse show" data-parent="#sidebar">
-							<li class="sidebar-item active"><a class="sidebar-link" href="/admin/">Default</a></li>
+							<li class="sidebar-item active"><a class="sidebar-link" href="/admin">Default</a></li>
 							<li class="sidebar-item"><a class="sidebar-link" href="/admin/users">Usuarios <span class="sidebar-badge badge badge-primary">New</span></a></li>
 						</ul>
 					</li>
