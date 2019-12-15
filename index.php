@@ -135,6 +135,8 @@ $app->post("/admin/users/create", function() {
 
   $_POST["inadmin"] = (isset($_POST["inadmin"]))?1:0;
 
+  $_POST['despassword'] = User::getPasswordHash($_POST['despassword']);
+
   $user->setData($_POST);
 
   $user->save();
@@ -220,9 +222,7 @@ $app->post("/admin/forgot/reset", function(){
 
 	$user->get((int)$forgot["iduser"]);
 
-	$password = password_hash($_POST["password"], PASSWORD_DEFAULT, [
-		"cost"=>12
-	]);
+  $password = User::getPasswordHash($_POST["password"]);
 
 	$user->setPassword($password);
 

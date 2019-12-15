@@ -384,7 +384,7 @@
           <div class="content">
             <span class="brand">
               <a href="#">
-                Hcode Store
+                Kalaboka Project
               </a>
             </span>
           </div>
@@ -402,7 +402,7 @@
                 <td>
                   <table class="soapbox">
                     <tr>
-                      <td class="soapbox-title">Recuperação de Senha</td>
+                      <td class="soapbox-title">Recuperação de Contas.</td>
                     </tr>
                   </table>
                   <table class="body">

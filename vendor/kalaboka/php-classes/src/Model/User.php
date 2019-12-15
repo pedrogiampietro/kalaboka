@@ -18,7 +18,7 @@ class User extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT * FROM tb_users WHERE deslogin = :LOGIN", array(
+		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = :LOGIN", array(
 			":LOGIN"=>$login
 		)); 
 
@@ -34,6 +34,8 @@ class User extends Model {
 
 			$user = new User();
 
+			$data['desperson'] = utf8_encode($data['desperson']);
+
 			$user->setData($data);
 
 			$_SESSION[User::SESSION] = $user->getValues();
@@ -45,6 +47,7 @@ class User extends Model {
 		}
 
 	}
+
 
 	public static function verifyLogin($inadmin = true)
 	{
@@ -116,16 +119,16 @@ class User extends Model {
 	public function update()
 	{
 	    $sql = new Sql();
-	    $results = $sql->select("CALL sp_usersupdate_save(:iduser, :desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin);", array(
-	        ":iduser"=>$this->getiduser(),
-	        ":desperson"=>utf8_encode($this->getdesperson()),
-	        ":deslogin"=>$this->getdeslogin(),
-	        ":despassword"=>$this->getdespassword(),
-	        ":desemail"=>$this->getdesemail(),
-	        ":nrphone"=>$this->getnrphone(),
-	        ":inadmin"=>$this->getinadmin()
-	    ));
-	    $this->setData($results[0]);
+		$results = $sql->select("CALL sp_usersupdate_save(:iduser, :desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", array(
+			":iduser"=>$this->getiduser(),
+			":desperson"=>$this->getdesperson(),
+			":deslogin"=>$this->getdeslogin(),
+			":despassword"=>$this->getdespassword(),
+			":desemail"=>$this->getdesemail(),
+			":nrphone"=>$this->getnrphone(),
+			":inadmin"=>$this->getinadmin()
+		));
+		$this->setData($results[0]);
 	}
 
 	public function delete()
@@ -267,6 +270,13 @@ class User extends Model {
 			":iduser"=>$this->getiduser()
 		));
 
+	}
+
+	public static function getPasswordHash($password)
+	{
+		return password_hash($password, PASSWORD_DEFAULT, [
+			'cost'=>12
+		]);
 	}
 }
 
